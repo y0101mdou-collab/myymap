@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5c3aa6685f74867cbc4d5ba96ad8f753 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+         top: 20px; left: 50%; transform: translateX(-50%); width: 450px; height: auto; 
+         background-color: rgba(255, 255, 255, 0.9); border: 2px solid #bdc3c7; z-index: 9999; 
+         text-align: center; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+         font-family: Arial, sans-serif;">
+         <h3 style="margin: 0 0 5px 0; color: #2c3e50; font-size: 20px; font-weight: bold;">
+            📍 River Nidd Bathing Water Quality & Source Tracker
+         </h3>
+         <p style="margin: 0; color: #7f8c8d; font-size: 13px;">
+            Status based on UK Environment Agency E. Coli Standards (>900 = Poor)
+         </p>
+    </div>
+    
+            <div class="folium-map" id="map_5c3aa6685f74867cbc4d5ba96ad8f753" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5c3aa6685f74867cbc4d5ba96ad8f753 = L.map(
+                "map_5c3aa6685f74867cbc4d5ba96ad8f753",
+                {
+                    center: [54.04, -1.6],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_aea6fa1b7a09bddf8cba8bcf0ce381fa = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_aea6fa1b7a09bddf8cba8bcf0ce381fa.addTo(map_5c3aa6685f74867cbc4d5ba96ad8f753);
+        
+    
+            var circle_marker_6552c89fc6991223041a5a79338007ba = L.circleMarker(
+                [53.996, -1.455],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_5c3aa6685f74867cbc4d5ba96ad8f753);
+        
+    
+        var popup_1cc0f93d7f90a5bb537286f9b58b99cf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_24a42ad708a1c9857c396c6826247bbb = $(`<div id="html_24a42ad708a1c9857c396c6826247bbb" style="width: 100.0%; height: 100.0%;">     <div style="width:240px; font-family:Arial, sans-serif;">         <h4 style="margin-bottom:5px; color:#2c3e50; border-bottom: 2px solid #c0392b; padding-bottom: 5px;">Knaresborough Lido</h4>         <b>Legal Status:</b> <span style='color:#c0392b; font-weight:bold;'>POOR (Unsafe for Bathing)</span><br>         <span style="font-size:12px; color:#c0392b;">⚠️ Avg E. Coli: <b>2834</b> cfu/100ml</span><br>         <span style="font-size:10px; color:#7f8c8d;">(UK Limit for Poor Quality: > 900)</span>         <hr style="margin:8px 0; border: 0; border-top: 1px dashed #ccc;">         <b>🔍 Pollution Sources (DNA Log Level):</b><br>         <span style="color:#2980b9;">🚽 Human Sewage:</span> <b>4.71</b><br>         <span style="color:#27ae60;">🐄 Farm Animal:</span> <b>2.35</b><br>         <span style="font-size:10px; color:#7f8c8d;">(Academic consensus: > 4.0 indicates significant recent contamination)</span>     </div>     </div>`)[0];
+                popup_1cc0f93d7f90a5bb537286f9b58b99cf.setContent(html_24a42ad708a1c9857c396c6826247bbb);
+            
+        
+
+        circle_marker_6552c89fc6991223041a5a79338007ba.bindPopup(popup_1cc0f93d7f90a5bb537286f9b58b99cf)
+        ;
+
+        
+    
+    
+            circle_marker_6552c89fc6991223041a5a79338007ba.bindTooltip(
+                `<div>
+                     Click to inspect Knaresborough Lido
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eafaee475994affb5cabf1ea278012a5 = L.circleMarker(
+                [54.024, -1.52],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_5c3aa6685f74867cbc4d5ba96ad8f753);
+        
+    
+        var popup_013e87ac2ab72e6418c20ae21efe1d26 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ffc8e5057ceb62b1edfe2ea3b37b831 = $(`<div id="html_1ffc8e5057ceb62b1edfe2ea3b37b831" style="width: 100.0%; height: 100.0%;">     <div style="width:240px; font-family:Arial, sans-serif;">         <h4 style="margin-bottom:5px; color:#2c3e50; border-bottom: 2px solid #c0392b; padding-bottom: 5px;">Scotton Mill</h4>         <b>Legal Status:</b> <span style='color:#c0392b; font-weight:bold;'>POOR (Unsafe for Bathing)</span><br>         <span style="font-size:12px; color:#c0392b;">⚠️ Avg E. Coli: <b>30800</b> cfu/100ml</span><br>         <span style="font-size:10px; color:#7f8c8d;">(UK Limit for Poor Quality: > 900)</span>         <hr style="margin:8px 0; border: 0; border-top: 1px dashed #ccc;">         <b>🔍 Pollution Sources (DNA Log Level):</b><br>         <span style="color:#2980b9;">🚽 Human Sewage:</span> <b>5.4</b><br>         <span style="color:#27ae60;">🐄 Farm Animal:</span> <b>4.57</b><br>         <span style="font-size:10px; color:#7f8c8d;">(Academic consensus: > 4.0 indicates significant recent contamination)</span>     </div>     </div>`)[0];
+                popup_013e87ac2ab72e6418c20ae21efe1d26.setContent(html_1ffc8e5057ceb62b1edfe2ea3b37b831);
+            
+        
+
+        circle_marker_eafaee475994affb5cabf1ea278012a5.bindPopup(popup_013e87ac2ab72e6418c20ae21efe1d26)
+        ;
+
+        
+    
+    
+            circle_marker_eafaee475994affb5cabf1ea278012a5.bindTooltip(
+                `<div>
+                     Click to inspect Scotton Mill
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1131cffe00e12460eb2141d7acef40be = L.circleMarker(
+                [54.03, -1.608],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_5c3aa6685f74867cbc4d5ba96ad8f753);
+        
+    
+        var popup_f5506a6f518baacd94704743979e5692 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ef29c4d1b03c192415e1aa4c88f7a0c8 = $(`<div id="html_ef29c4d1b03c192415e1aa4c88f7a0c8" style="width: 100.0%; height: 100.0%;">     <div style="width:240px; font-family:Arial, sans-serif;">         <h4 style="margin-bottom:5px; color:#2c3e50; border-bottom: 2px solid #c0392b; padding-bottom: 5px;">Hampsthwaite</h4>         <b>Legal Status:</b> <span style='color:#c0392b; font-weight:bold;'>POOR (Unsafe for Bathing)</span><br>         <span style="font-size:12px; color:#c0392b;">⚠️ Avg E. Coli: <b>6377</b> cfu/100ml</span><br>         <span style="font-size:10px; color:#7f8c8d;">(UK Limit for Poor Quality: > 900)</span>         <hr style="margin:8px 0; border: 0; border-top: 1px dashed #ccc;">         <b>🔍 Pollution Sources (DNA Log Level):</b><br>         <span style="color:#2980b9;">🚽 Human Sewage:</span> <b>4.27</b><br>         <span style="color:#27ae60;">🐄 Farm Animal:</span> <b>4.53</b><br>         <span style="font-size:10px; color:#7f8c8d;">(Academic consensus: > 4.0 indicates significant recent contamination)</span>     </div>     </div>`)[0];
+                popup_f5506a6f518baacd94704743979e5692.setContent(html_ef29c4d1b03c192415e1aa4c88f7a0c8);
+            
+        
+
+        circle_marker_1131cffe00e12460eb2141d7acef40be.bindPopup(popup_f5506a6f518baacd94704743979e5692)
+        ;
+
+        
+    
+    
+            circle_marker_1131cffe00e12460eb2141d7acef40be.bindTooltip(
+                `<div>
+                     Click to inspect Hampsthwaite
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e01725613a4d0b42523f711dfed5540b = L.circleMarker(
+                [54.059, -1.695],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_5c3aa6685f74867cbc4d5ba96ad8f753);
+        
+    
+        var popup_acd591cfa702d69c3450c170dfe14c0c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_448031a64aec235270bdfe3c05392a87 = $(`<div id="html_448031a64aec235270bdfe3c05392a87" style="width: 100.0%; height: 100.0%;">     <div style="width:240px; font-family:Arial, sans-serif;">         <h4 style="margin-bottom:5px; color:#2c3e50; border-bottom: 2px solid #c0392b; padding-bottom: 5px;">Summerbridge</h4>         <b>Legal Status:</b> <span style='color:#c0392b; font-weight:bold;'>POOR (Unsafe for Bathing)</span><br>         <span style="font-size:12px; color:#c0392b;">⚠️ Avg E. Coli: <b>4970</b> cfu/100ml</span><br>         <span style="font-size:10px; color:#7f8c8d;">(UK Limit for Poor Quality: > 900)</span>         <hr style="margin:8px 0; border: 0; border-top: 1px dashed #ccc;">         <b>🔍 Pollution Sources (DNA Log Level):</b><br>         <span style="color:#2980b9;">🚽 Human Sewage:</span> <b>4.38</b><br>         <span style="color:#27ae60;">🐄 Farm Animal:</span> <b>4.58</b><br>         <span style="font-size:10px; color:#7f8c8d;">(Academic consensus: > 4.0 indicates significant recent contamination)</span>     </div>     </div>`)[0];
+                popup_acd591cfa702d69c3450c170dfe14c0c.setContent(html_448031a64aec235270bdfe3c05392a87);
+            
+        
+
+        circle_marker_e01725613a4d0b42523f711dfed5540b.bindPopup(popup_acd591cfa702d69c3450c170dfe14c0c)
+        ;
+
+        
+    
+    
+            circle_marker_e01725613a4d0b42523f711dfed5540b.bindTooltip(
+                `<div>
+                     Click to inspect Summerbridge
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d99f997c1152302bbcdb6dc57aa80b72 = L.circleMarker(
+                [54.089, -1.762],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_5c3aa6685f74867cbc4d5ba96ad8f753);
+        
+    
+        var popup_055de28e022b55a95e0545f7bf6046f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9899e1c196184b273d86415214ebe0bf = $(`<div id="html_9899e1c196184b273d86415214ebe0bf" style="width: 100.0%; height: 100.0%;">     <div style="width:240px; font-family:Arial, sans-serif;">         <h4 style="margin-bottom:5px; color:#2c3e50; border-bottom: 2px solid #c0392b; padding-bottom: 5px;">Pateley Bridge</h4>         <b>Legal Status:</b> <span style='color:#c0392b; font-weight:bold;'>POOR (Unsafe for Bathing)</span><br>         <span style="font-size:12px; color:#c0392b;">⚠️ Avg E. Coli: <b>3494</b> cfu/100ml</span><br>         <span style="font-size:10px; color:#7f8c8d;">(UK Limit for Poor Quality: > 900)</span>         <hr style="margin:8px 0; border: 0; border-top: 1px dashed #ccc;">         <b>🔍 Pollution Sources (DNA Log Level):</b><br>         <span style="color:#2980b9;">🚽 Human Sewage:</span> <b>3.42</b><br>         <span style="color:#27ae60;">🐄 Farm Animal:</span> <b>4.32</b><br>         <span style="font-size:10px; color:#7f8c8d;">(Academic consensus: > 4.0 indicates significant recent contamination)</span>     </div>     </div>`)[0];
+                popup_055de28e022b55a95e0545f7bf6046f1.setContent(html_9899e1c196184b273d86415214ebe0bf);
+            
+        
+
+        circle_marker_d99f997c1152302bbcdb6dc57aa80b72.bindPopup(popup_055de28e022b55a95e0545f7bf6046f1)
+        ;
+
+        
+    
+    
+            circle_marker_d99f997c1152302bbcdb6dc57aa80b72.bindTooltip(
+                `<div>
+                     Click to inspect Pateley Bridge
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
